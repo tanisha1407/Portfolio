@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Tanisha Jain | AI/ML Engineer - Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="grid-overlay"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="logo">TANISHA JAIN</div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text">TANISHA JAIN</h1>
+            <div class="hero-subtitle">AI/ML ENGINEER & DATA SCIENTIST</div>
+            <div class="typed-text">
+                <span id="typed"></span>
+            </div>
+            <p class="hero-desc">Building intelligent systems that push the boundaries of AI innovation. Specializing in
+                LLMs, Computer Vision, and Scalable AI Architectures.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openResumeModal()">
+                    <i class="fas fa-file-alt"></i> View Resume
+                </button>
+                <button class="btn-secondary" onclick="downloadResume()">
+                    <i class="fas fa-download"></i> Download Resume
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title"><span>Professional Experience</span></h2>
+        <div class="exp-container">
+            <div class="exp-card reveal">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">AI Intern</div>
+                        <div class="exp-company">Greenfinch Global Consulting Services</div>
+                    </div>
+                    <div class="exp-date">February-March 2026</div>
+                </div>
+                <ul class="exp-list">
+                    <li>Built and deployed AI-powered microservices integrating Google Gemini LLM into production
+                        Salesforce workflows using FastAPI, Kafka, and PostgreSQL for automated credit narrative
+                        generation</li>
+                    <li>Designed a dual-topic Kafka producer-consumer pipeline with automatic model fallback and
+                        token-level cost tracking, reducing manual credit summary preparation time significantly</li>
+                    <li>Deployed service on AWS EC2 as a systemd process with PostgreSQL job state management and
+                        Salesforce callback with retry logic</li>
+                </ul>
+            </div>
+
+            <div class="exp-card reveal">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">AI-ML Intern</div>
+                        <div class="exp-company">Forty Seven Billion</div>
+                    </div>
+                    <div class="exp-date">September-December 2025</div>
+                </div>
+                <ul class="exp-list">
+                    <li>Built a real-time web proctoring tool using JavaScript, MediaPipe, WebRTC, and FastAPI with
+                        face, iris, and head movement tracking, voice detection, and tab/window activity monitoring</li>
+                    <li>Developed an AI-powered Chrome extension for autonomous web test automation using Gemini/OpenAI
+                        LLMs, DOM scanning, intelligent locator extraction, and CodeceptJS test generation</li>
+                </ul>
+            </div>
+
+            <div class="exp-card reveal">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Data Science Intern</div>
+                        <div class="exp-company">Celebal Technologies</div>
+                    </div>
+                    <div class="exp-date">June-August 2025</div>
+                </div>
+                <ul class="exp-list">
+                    <li>Built a student score prediction model using regression techniques to identify academic
+                        performance drivers and improve outcome forecasting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section - Grid View -->
+    <section id="projects" class="section">
+        <h2 class="section-title"><span>Featured Projects</span></h2>
+        <div class="projects-grid">
+            <!-- Project 1: Credit Summary -->
+            <div class="project-card reveal" onclick="openProjectDetail(1)">
+                <div class="project-icon">💰</div>
+                <h3 class="project-title">AI-Powered Credit Summary Generation</h3>
+                <p class="project-description">Async AI narrative generation service integrated with Salesforce CRM.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">Gemini AI</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details</span>
+                </div>
+            </div>
+
+            <!-- Project 2: AI Test Orchestrator -->
+            <div class="project-card reveal" onclick="openProjectDetail(2)">
+                <div class="project-icon">🤖</div>
+                <h3 class="project-title">AI Test Orchestrator</h3>
+                <p class="project-description">Autonomous web test automation using LLMs and Chrome extension.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Chrome Extensions</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+
+            <!-- Project 3: car Price Predictor -->
+            <div class="project-card reveal" onclick="openProjectDetail(3)">
+                <div class="project-icon">🚗💰</div>
+                <h3 class="project-title">Car Price Predictor ML Model</h3>
+                <p class="project-description">Advanced ML model with 82% R² score for car price prediction.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">XGBoost</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+
+            <!-- Project 4: AI Proctoring System -->
+            <div class="project-card reveal" onclick="openProjectDetail(4)">
+                <div class="project-icon">👁️</div>
+                <h3 class="project-title">Real-Time AI Proctoring System</h3>
+                <p class="project-description">Web-based exam integrity monitoring with face tracking and behavioral
+                    analysis.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">MediaPipe</span>
+                    <span class="tech-tag">WebRTC</span>
+                    <span class="tech-tag">FastAPI</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+
+            <!-- Project 5: ASL Detection -->
+            <div class="project-card reveal" onclick="openProjectDetail(5)">
+                <div class="project-icon">🤟</div>
+                <h3 class="project-title">American Sign Language Detection</h3>
+                <p class="project-description">Real-time ASL recognition using OpenCV and Random Forest classifier.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">MediaPipe</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+
+            <!-- Project 6: Restaurant Name Generator -->
+            <div class="project-card reveal" onclick="openProjectDetail(6)">
+                <div class="project-icon">🍴</div>
+                <h3 class="project-title">Restaurant Name Generator</h3>
+                <p class="project-description">AI-powered creative restaurant name generator using LLMs.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">LangChain</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+            <!-- Project 7: Customer Purchase Behaviour Analysis -->
+            <div class="project-card reveal" onclick="openProjectDetail(7)">
+                <div class="project-icon">🛒📊</div>
+                <h3 class="project-title">Customer Purchase Behaviour Analysis</h3>
+                <p class="project-description">In-depth analysis of customer purchasing patterns using transactional and
+                    demographic data.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Seaborn</span>
+                    <span class="tech-tag">Data Analysis</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+            <!-- Project 8: Mobile Price Range Prediction -->
+            <div class="project-card reveal" onclick="openProjectDetail(8)">
+                <div class="project-icon">📱💰</div>
+                <h3 class="project-title">Mobile Price Range Prediction</h3>
+                <p class="project-description">ML model to predict mobile phone price ranges based on specifications
+                    with 79% accuracy.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Logistic Regression</span>
+                    <span class="tech-tag">EDA</span>
+                    <span class="tech-tag">Jupyter</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+            <!-- Project 9: Invisible Cloak using Python & OpenCV -->
+            <div class="project-card reveal" onclick="openProjectDetail(9)">
+                <div class="project-icon">🧥✨</div>
+                <h3 class="project-title">Invisible Cloak using Python & OpenCV</h3>
+                <p class="project-description">Recreated Harry Potter's invisibility cloak using computer vision and
+                    color detection techniques.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">HSV Color Space</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+            <!-- Project 10: Student Score Prediction -->
+            <div class="project-card reveal" onclick="openProjectDetail(10)">
+                <div class="project-icon">🎓📈</div>
+                <h3 class="project-title">Student Score Prediction</h3>
+                <p class="project-description">ML model to predict student scores based on various factors with 85%
+                    accuracy.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Jupyter</span>
+                </div>
+                <div class="project-hover-info">
+                    <span>Click to view details </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title"><span>Technical Arsenal</span></h2>
+        <div class="skills-container">
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">C/C++</span>
+                        <span class="skill-item">HTML/CSS/JS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-brain"></i> AI/ML</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">LangChain</span>
+                        <!-- <span class="skill-item"></span> -->
+                        <span class="skill-item">LLM</span>
+                        <span class="skill-item">MediaPipe</span>
+                        <span class="skill-item">Open-cv</span>
+                        <span class="skill-item">RAG</span>
+                        <span class="skill-item">AI Agents</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-tools"></i> Frameworks</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">Streamlit</span>
+                        <span class="skill-item">Kafka</span>
+
+                        <span class="skill-item">WebRTC</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-database"></i>Database</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">RDS</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">PostgreSQL</span>
+
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">AWS EC2</span>
+                        <span class="skill-item">AWS S3</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <h2 class="section-title"><span>Certifications</span></h2>
+        <div class="cert-grid">
+            <div class="cert-card reveal" onclick="openCertificateModal('machine-learning')">
+                <div class="cert-image-container">
+                    <img src="certificates/machine-learning-cert.jpg" alt="Machine Learning with Python Certificate"
+                        class="cert-image"
+                        onerror="this.src='https://via.placeholder.com/400x300/ff006e/ffffff?text=Machine+Learning+Certificate'">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i> View Certificate
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Machine Learning with Python</h3>
+                    <p>Regex Software Services</p>
+                    <small>July-September 2024</small>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i> Verified
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal" onclick="openCertificateModal('cpp')">
+                <div class="cert-image-container">
+                    <img src="certificates/cpp-cert.jpg" alt="C++ Programming Certificate" class="cert-image"
+                        onerror="this.src='https://via.placeholder.com/400x300/00f5d4/000000?text=C%2B%2B+Certificate'">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i> View Certificate
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>C++ Programming</h3>
+                    <p>Programmers World</p>
+                    <small>2022</small>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i> Verified
+                    </div>
+                </div>
+            </div>
+            <div class="cert-card reveal" onclick="openCertificateModal('data-science')">
+                <div class="cert-image-container">
+                    <img src="certificates/data-science-cert.jpg" alt="Data Science Fundamentals Certificate"
+                        class="cert-image"
+                        onerror="this.src='https://via.placeholder.com/400x300/ff006e/ffffff?text=Data+Science+Certificate'">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i> View Certificate
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Data Science Fundamentals</h3>
+                    <p>Fractal</p>
+                    <small>2026</small>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i> Verified
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal" onclick="openCertificateModal('python')">
+                <div class="cert-image-container">
+                    <img src="certificates/python-cert.jpg" alt="Python Programming Certificate" class="cert-image"
+                        onerror="this.src='https://via.placeholder.com/400x300/ff006e/ffffff?text=Python+Certificate'">
+                    <div class="cert-overlay">
+                        <i class="fas fa-search-plus"></i> View Certificate
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Python Programming</h3>
+                    <p>CISCO</p>
+                    <small>2023</small>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i> Verified
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title"><span>Get In Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item reveal">
+                    <a href="mailto:tanishaj073@gmail.com">
+                        <i class="fas fa-envelope"></i> tanishaj073@gmail.com
+                    </a>
+                </div>
+                <div class="contact-item reveal">
+                    <a href="tel:+919511382416">
+                        <i class="fas fa-phone"></i> +91 9511382416
+                    </a>
+                </div>
+            </div>
+            <div class="hero-buttons" style="margin-top: 2rem;">
+                <!-- <a href="mailto:tanishaj073@gmail.com" class="btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </a> -->
+                <a href="https://www.linkedin.com/in/tanisha-jain-63a935269/" target="_blank" class="btn-secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/tanisha1407" target="_blank" class="btn-secondary">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        style="text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(0, 245, 212, 0.2);">
+        <p>© Tanisha Jain | AI/ML Engineer | <span style="color: #ff006e;">✦</span> Built with so much passion and a
+            sprinkle of code magic
+            <span style="color: #ff006e;">✦</span>
+        </p>
+    </footer>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-content" style="max-width: 800px; background: #0a0c10; padding: 20px;">
+            <button class="close-modal" onclick="closeResumeModal()">&times;</button>
+            <div style="padding: 20px; text-align: center;">
+                <i class="fas fa-file-pdf" style="font-size: 4rem; color: #ff006e;"></i>
+                <h2 style="margin: 20px 0;">Tanisha Jain - Resume</h2>
+                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; margin: 20px 0;">
+                    <p><i class="fas fa-user"></i> <strong>Tanisha Jain</strong></p>
+                    <p><i class="fas fa-graduation-cap"></i> B.Tech AI & Data Science | CGPA: 9.00</p>
+                    <p><i class="fas fa-envelope"></i> tanishaj073@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9511382416</p>
+                </div>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <button onclick="downloadResume()" class="btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                    <button onclick="window.print()" class="btn-secondary">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal" onclick="closeCertModal()">
+        <div class="cert-modal-content" onclick="event.stopPropagation()">
+            <button class="close-cert-modal" onclick="closeCertModal()">&times;</button>
+            <img id="certModalImage" class="cert-modal-image" src="" alt="Certificate">
+            <div class="cert-modal-info">
+                <h3 id="certModalTitle">Certificate Title</h3>
+                <p id="certModalIssuer">Issuer</p>
+                <p id="certModalDate">Date</p>
+                <div class="cert-modal-buttons">
+                    <button onclick="downloadCertificate()" class="cert-download-btn">
+                        <i class="fas fa-download"></i> Download Certificate
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
