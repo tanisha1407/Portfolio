@@ -42,7 +42,7 @@ const projectsData = {
         // githubUrl: "https://github.com/tanisha1407/ai-test-orchestrator",
         demoVideos: [
             { title: "QA Extension Demo", file: "videos/QA_Extension_video.mp4", desc: "Chrome extension in action — DOM scanning, locator extraction and test generation" },
-            { title: "User Flow Recording", file: "videos/User_flow_recording.mp4", desc: "Full end-to-end user flow recorded and converted into automated tests" }
+            { title: "User Flow Recording", file: "videos/User_flow.mp4", desc: "Full end-to-end user flow recorded and converted into automated tests" }
         ],
         // liveUrl: "https://chrome.google.com/webstore/detail/ai-test-orchestrator",
         metrics: {

@@ -126,8 +126,7 @@ function downloadResume() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    alert('📄 Downloading resume...');
-}
+    }
 
 // Demo Video Modal
 function openDemo(videoUrl) {
@@ -238,8 +237,8 @@ function showModelDetails() {
 
 📈 Performance Metrics:
 • Random Forest R² Score: 0.82 (82% variance explained)
-• RMSE: $7,413
-• MAE: $4,435
+• RMSE: 7,413
+• MAE: 4,435
 
 🔍 Key Insights:
 • Vehicle age is the strongest price predictor (24% importance)

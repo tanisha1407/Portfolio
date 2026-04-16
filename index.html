@@ -467,27 +467,26 @@
     <div id="resumeModal" class="modal">
         <div class="modal-content" style="max-width: 800px; background: #0a0c10; padding: 20px;">
             <button class="close-modal" onclick="closeResumeModal()">&times;</button>
-            <div style="padding: 20px; text-align: center;">
-                <i class="fas fa-file-pdf" style="font-size: 4rem; color: #ff006e;"></i>
-                <h2 style="margin: 20px 0;">Tanisha Jain - Resume</h2>
-                <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; margin: 20px 0;">
-                    <p><i class="fas fa-user"></i> <strong>Tanisha Jain</strong></p>
-                    <p><i class="fas fa-graduation-cap"></i> B.Tech AI & Data Science | CGPA: 9.00</p>
-                    <p><i class="fas fa-envelope"></i> tanishaj073@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +91 9511382416</p>
-                </div>
-                <div class="hero-buttons" style="justify-content: center;">
+            <div style="padding: 20px;">
+                <h2 style="text-align:center; margin-bottom: 15px;">Tanisha Jain - Resume</h2>
+
+                <!-- ✅ PDF Preview -->
+                <iframe src="https://drive.google.com/file/d/1Qkcj-QErggsoUXm3nWz5a2XBW2QLx1J2/view?usp=drive_link"
+                    style="width:100%; height:500px; border:none; border-radius:10px; ">
+                </iframe>
+
+                <!-- Buttons -->
+                <div class="hero-buttons" style="justify-content: center; margin-top: 15px;">
                     <button onclick="downloadResume()" class="btn-primary">
                         <i class="fas fa-download"></i> Download PDF
                     </button>
-                    <button onclick="window.print()" class="btn-secondary">
-                        <i class="fas fa-print"></i> Print
-                    </button>
+                    <a href="resume/Tanisha_Jain_Resume.pdf" target="_blank" class="btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Certificate Modal -->
     <div id="certModal" class="cert-modal" onclick="closeCertModal()">
         <div class="cert-modal-content" onclick="event.stopPropagation()">
