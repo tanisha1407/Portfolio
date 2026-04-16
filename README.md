@@ -3,8 +3,8 @@
 Welcome to my personal portfolio showcasing my work in **AI/ML, LLM systems, and real-world applications**.
 
 🔗 Live Portfolio: https://your-portfolio-link.vercel.app  
-📄 Resume: [Add your resume link]  
-💻 GitHub: https://github.com/your-username  
+📄 Resume: https://drive.google.com/file/d/1Qkcj-QErggsoUXm3nWz5a2XBW2QLx1J2/view?usp=sharing 
+💻 GitHub: https://github.com/tanisha1407
 
 ---
 
