@@ -171,7 +171,14 @@ const projectsData = {
         title: "Real-Time AI Proctoring System",
         icon: "👁️",
         shortDesc: "Web-based exam integrity monitoring with face tracking",
-        fullDescription: "A sophisticated proctoring system that ensures exam integrity through real-time monitoring. The system tracks facial movements, detects anomalies, and logs suspicious activities during online examinations.",
+        fullDescription: `A sophisticated proctoring system that ensures exam integrity through real-time monitoring. The system tracks facial movements, detects anomalies, and logs suspicious activities during online examinations.<br><br>
+
+To test it, simply click the *Live Demo* button and allow camera access.<br>
+The system will start monitoring your face and surroundings, demonstrating its proctoring capabilities.<br><br>
+
+<strong>Demo Credentials:</strong><br>
+Username: s<br>
+Password: 1`,
         features: [
             "Face, iris, and head movement tracking with MediaPipe",
             "Voice detection and behavioral monitoring",
