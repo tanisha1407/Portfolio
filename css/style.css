@@ -19,8 +19,8 @@ body {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 20% 50%, rgba(156, 39, 176, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 50%),
-                linear-gradient(135deg, #0a0c10 0%, #1a1e2a 100%);
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(135deg, #0a0c10 0%, #1a1e2a 100%);
     z-index: -2;
 }
 
@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -40,8 +40,13 @@ body {
 }
 
 @keyframes gridMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
 }
 
 /* Floating Particles */
@@ -64,36 +69,18 @@ body {
 }
 
 @keyframes floatParticle {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-100px) rotate(180deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-100px) rotate(180deg);
+    }
 }
 
-/* Custom Cursor */
-.cursor {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ff006e;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: 0.1s;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
-}
 
-.cursor-dot {
-    width: 5px;
-    height: 5px;
-    background: #00f5d4;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: 0.05s;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px #00f5d4;
-}
 
 /* Navigation */
 .nav {
@@ -130,8 +117,15 @@ body {
 }
 
 @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .nav-links {
@@ -196,6 +190,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -213,10 +208,23 @@ body {
 }
 
 @keyframes glitch {
-    0%, 100% { text-shadow: 0.05em 0 0 #ff006e, -0.05em -0.025em 0 #00f5d4; }
-    25% { text-shadow: -0.05em 0 0 #ff006e, 0.05em 0.025em 0 #00f5d4; }
-    50% { text-shadow: 0.05em 0.025em 0 #ff006e, -0.05em 0 0 #00f5d4; }
-    75% { text-shadow: -0.05em 0.025em 0 #ff006e, 0.05em 0 0 #00f5d4; }
+
+    0%,
+    100% {
+        text-shadow: 0.05em 0 0 #ff006e, -0.05em -0.025em 0 #00f5d4;
+    }
+
+    25% {
+        text-shadow: -0.05em 0 0 #ff006e, 0.05em 0.025em 0 #00f5d4;
+    }
+
+    50% {
+        text-shadow: 0.05em 0.025em 0 #ff006e, -0.05em 0 0 #00f5d4;
+    }
+
+    75% {
+        text-shadow: -0.05em 0.025em 0 #ff006e, 0.05em 0 0 #00f5d4;
+    }
 }
 
 .hero-subtitle {
@@ -426,8 +434,15 @@ body {
 }
 
 @keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 5px rgba(0, 245, 212, 0.2); }
-    50% { box-shadow: 0 0 20px rgba(0, 245, 212, 0.5); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(0, 245, 212, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 245, 212, 0.5);
+    }
 }
 
 .project-card::after {
@@ -460,8 +475,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .project-title {
@@ -790,8 +812,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {
@@ -803,7 +830,7 @@ body {
     padding: 5px;
 }
 
-.modal-content > *:not(button) {
+.modal-content>*:not(button) {
     background: #0a0c10;
     border-radius: 16px;
 }
@@ -1049,8 +1076,39 @@ pre code {
         align-items: center;
     }
 
-    .btn-primary, .btn-secondary {
+    .btn-primary,
+    .btn-secondary {
         width: 100%;
         text-align: center;
     }
+}
+
+.skill-bars {
+    margin-top: 15px;
+}
+
+.skill-bar {
+    margin-bottom: 15px;
+}
+
+.skill-bar span {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+}
+
+.bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff006e, #00f5d4);
+    border-radius: 10px;
+    transition: width 1s ease;
 }

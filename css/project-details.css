@@ -20,6 +20,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -40,8 +41,15 @@
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .project-title-large {
@@ -218,8 +226,8 @@
 /* Back Button */
 .back-button {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    top: 7rem;
+    left: 5rem;
     background: linear-gradient(135deg, #ff006e, #ff4d4d);
     color: white;
     width: 50px;
@@ -289,7 +297,8 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: center;
     border: 1px solid rgba(0, 245, 212, 0.3);
@@ -305,48 +314,48 @@ th {
         margin-top: 80px;
         padding: 1rem;
     }
-    
+
     .project-header {
         padding: 2rem;
     }
-    
+
     .project-title-large {
         font-size: 1.8rem;
     }
-    
+
     .project-content {
         padding: 1.5rem;
     }
-    
+
     .project-section h3 {
         font-size: 1.2rem;
     }
-    
+
     .project-links-full {
         flex-direction: column;
     }
-    
+
     .project-link-large {
         justify-content: center;
     }
-    
+
     .features-list {
         grid-template-columns: 1fr;
     }
-    
+
     .project-stats {
         gap: 1rem;
     }
-    
+
     .stat-badge {
         padding: 0.3rem 1rem;
         font-size: 0.8rem;
     }
-    
+
     .back-button {
-        bottom: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
+        top: 1.5rem;
+        left: 1.5rem;
+        bottom: auto;
+        right: auto;
     }
 }

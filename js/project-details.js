@@ -14,6 +14,36 @@ const projectsData = {
             "PostgreSQL job state management with retry logic for failed jobs",
             "Salesforce callback integration for seamless CRM workflow"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why Kafka-based architecture?",
+                    points: [
+                        "LLM calls are high latency → needed async processing",
+                        "Kafka decouples request ingestion from processing"
+                    ]
+                },
+                {
+                    title: "Alternative considered",
+                    points: [
+                        "Direct FastAPI synchronous calls",
+                        "Rejected due to blocking and poor scalability"
+                    ]
+                },
+                {
+                    title: "Cost optimization strategy",
+                    points: [
+                        "Token-level tracking implemented",
+                        "Prompt compression reduced unnecessary tokens"
+                    ]
+                }
+            ],
+            failures: [
+                "Initial system slowed under burst traffic due to LLM latency",
+                "Unoptimized prompts caused high API costs"
+            ]
+        },
+
         techStack: ["FastAPI", "Kafka", "PostgreSQL", "AWS EC2", "Gemini AI", "Python", "Docker"],
         // githubUrl: "https://github.com/tanisha1407/credit-summary-ai",
         // demoUrl: "videos/demo.mp4",
@@ -38,6 +68,45 @@ const projectsData = {
             "Cross-system orchestration between Chrome extension, Flask backend, and native agent",
             "Support for multiple testing frameworks and assertions"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Initial approach using CodeceptJS",
+                    points: [
+                        "Used CodeceptJS for DOM locator scanning and test execution",
+                        "Integrated directly for end-to-end automation pipeline"
+                    ]
+                },
+                {
+                    title: "Why we moved away from CodeceptJS?",
+                    points: [
+                        "Failed to correctly identify elements with similar class names",
+                        "Created a new Chrome instance for each test run",
+                        "Resulted in inefficient execution and increased overhead"
+                    ]
+                },
+                {
+                    title: "Switch to NanoBrowser for DOM scanning",
+                    points: [
+                        "Provided more reliable DOM parsing and element extraction",
+                        "Handled dynamic and similar-class elements better than CodeceptJS"
+                    ]
+                },
+                {
+                    title: "Why Selenium for test execution?",
+                    points: [
+                        "Allowed reuse of a single browser instance across multiple tests",
+                        "Improved execution speed and reduced resource usage",
+                        "More control over browser lifecycle and test flow"
+                    ]
+                }
+            ],
+            failures: [
+                "Initial system produced incorrect locators for complex DOM structures",
+                "Repeated browser instantiation caused performance bottlenecks",
+                "Test execution was slow and inconsistent before switching tools"
+            ]
+        },
         techStack: ["Chrome Extensions", "LLMs", "JavaScript", "Flask", "CodeceptJS", "Python", "WebSocket"],
         // githubUrl: "https://github.com/tanisha1407/ai-test-orchestrator",
         demoVideos: [
@@ -65,7 +134,29 @@ const projectsData = {
             "Feature importance analysis revealing key price determinants",
             "Handled missing values in 8+ columns using median/mode imputation"
         ],
-        techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Matplotlib", "Seaborn","Streamlit", "Jupyter Notebook"],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why XGBoost?",
+                    points: [
+                        "Handles tabular data better than linear models",
+                        "Captures non-linear relationships"
+                    ]
+                },
+                {
+                    title: "Alternative considered",
+                    points: [
+                        "Random Forest (lower performance)",
+                        "Linear Regression (underfitting)"
+                    ]
+                }
+            ],
+            failures: [
+                "Initial model overfitted before tuning",
+                "Feature scaling issues affected performance"
+            ]
+        },
+        techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Matplotlib", "Seaborn", "Streamlit", "Jupyter Notebook"],
         githubUrl: "https://github.com/tanisha1407/CAR-PRICE-PREDICTOR.git",
         demoUrl: "videos/Car.mp4",
         liveUrl: "https://car-price-predictor-7gn4ru6ca9se4yw3yekyoo.streamlit.app/",
@@ -89,6 +180,28 @@ const projectsData = {
             "Screen recording capabilities for evidence collection",
             "Optimized performance for real-time inference"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why MediaPipe?",
+                    points: [
+                        "Lightweight and optimized for real-time inference",
+                        "Faster than deep learning models"
+                    ]
+                },
+                {
+                    title: "Why WebRTC + Socket.IO?",
+                    points: [
+                        "Real-time communication needed for monitoring",
+                        "Low latency streaming"
+                    ]
+                }
+            ],
+            failures: [
+                "Face detection failed under poor lighting",
+                "Multiple faces caused incorrect tracking"
+            ]
+        },
         techStack: ["MediaPipe", "WebRTC", "FastAPI", "JavaScript", "Socket.IO", "OpenCV", "Python"],
         githubUrl: "https://github.com/tanisha1407/Video_proctoring_system.git",
         demoUrl: "videos/Proctoring_video.mp4",
@@ -113,6 +226,28 @@ const projectsData = {
             "Feature extraction optimization for better accuracy",
             "Accessibility-focused design for hearing-impaired users"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why Random Forest?",
+                    points: [
+                        "Works well on structured landmark data",
+                        "Requires less training data"
+                    ]
+                },
+                {
+                    title: "Alternative considered",
+                    points: [
+                        "CNN (higher accuracy but data-heavy)",
+                        "SVM (slower for real-time)"
+                    ]
+                }
+            ],
+            failures: [
+                "Gesture misclassification for similar hand signs",
+                "Model struggled with different hand angles"
+            ]
+        },
         techStack: ["Python", "OpenCV", "Scikit-learn", "MediaPipe", "NumPy", "Random Forest"],
         githubUrl: "https://github.com/tanisha1407/asl-detection",
         demoUrl: "videos/ASL.mp4",
@@ -137,6 +272,28 @@ const projectsData = {
             "LLM-powered name generation with context awareness",
             "Customizable prompts for different restaurant types"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why LLM-based generation?",
+                    points: [
+                        "Traditional random generators lack creativity",
+                        "LLM provides contextual and diverse outputs"
+                    ]
+                },
+                {
+                    title: "Why prompt engineering?",
+                    points: [
+                        "Controls style (modern, funny, premium)",
+                        "Improves output consistency"
+                    ]
+                }
+            ],
+            failures: [
+                "Initial outputs were repetitive",
+                "Poor prompts led to generic names"
+            ]
+        },
         techStack: ["Python", "Streamlit", "LLM", "LangChain", "Prompt Engineering", "OpenAI API"],
         githubUrl: "https://github.com/tanisha1407/restaurant-name-generator",
         demoUrl: "videos/Restaurant_name_generator.mp4",
@@ -162,6 +319,28 @@ const projectsData = {
             "Visualization of key insights using matplotlib and seaborn",
             "Export of analysis results to CSV for business reporting"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why analysis over ML model?",
+                    points: [
+                        "Problem required insights, not predictions",
+                        "Business decisions depend on interpretability"
+                    ]
+                },
+                {
+                    title: "Why Pandas + visualization?",
+                    points: [
+                        "Efficient for large tabular datasets",
+                        "Clear communication of insights"
+                    ]
+                }
+            ],
+            failures: [
+                "Initial data had missing values and inconsistencies",
+                "Early analysis lacked segmentation clarity"
+            ]
+        },
         techStack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook", "Data Analysis", "Statistical Analysis"],
         githubUrl: "https://github.com/tanisha1407/customer-purchase-analysis",
         demoUrl: "videos/customer-purchase-analysis-demo.mp4",
@@ -210,6 +389,28 @@ const projectsData = {
             "Achieved 79% test accuracy and 83% training accuracy",
             "Detailed evaluation using confusion matrix and classification report"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why Logistic Regression?",
+                    points: [
+                        "Simple and interpretable for classification",
+                        "Works well on balanced dataset"
+                    ]
+                },
+                {
+                    title: "Why MinMax scaling?",
+                    points: [
+                        "Improves convergence",
+                        "Ensures feature consistency"
+                    ]
+                }
+            ],
+            failures: [
+                "Initial model accuracy was low before feature engineering",
+                "Some features had weak predictive power"
+            ]
+        },
         techStack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "Logistic Regression", "Jupyter Notebook", "MinMaxScaler"],
         githubUrl: "https://github.com/tanisha1407/mobile-price-prediction",
         demoUrl: "videos/mobile-price-prediction-demo.mp4",
@@ -278,6 +479,28 @@ const projectsData = {
             "Smooth transition and real-time display",
             "Adjustable color range for different cloak colors (red, blue, green)"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why HSV color space?",
+                    points: [
+                        "Separates color from brightness",
+                        "More robust than RGB for detection"
+                    ]
+                },
+                {
+                    title: "Why morphological operations?",
+                    points: [
+                        "Removes noise from mask",
+                        "Improves detection accuracy"
+                    ]
+                }
+            ],
+            failures: [
+                "Poor lighting affected color detection",
+                "Background movement broke illusion"
+            ]
+        },
         techStack: ["Python", "OpenCV", "NumPy", "Computer Vision", "HSV Color Space", "Image Processing", "Real-time Video"],
         githubUrl: "https://github.com/tanisha1407/INVISIBLE-CLOAK-.git",
         demoUrl: "videos/Invisible_Cloak.mp4",
@@ -376,6 +599,28 @@ const projectsData = {
             "Trained and saved ML model using Scikit-learn",
             "Model evaluation using Cross-Validated R² score"
         ],
+        engineering: {
+            decisions: [
+                {
+                    title: "Why Linear Regression?",
+                    points: [
+                        "Simple baseline model",
+                        "Interpretable relationships"
+                    ]
+                },
+                {
+                    title: "Why one-hot encoding?",
+                    points: [
+                        "Handles categorical variables effectively",
+                        "Improves model input quality"
+                    ]
+                }
+            ],
+            failures: [
+                "Model initially underfit due to limited features",
+                "Categorical encoding errors reduced accuracy"
+            ]
+        },
         techStack: ["Python", "Streamlit", "Pandas", "NumPy", "Scikit-learn", "Joblib"],
         githubUrl: "https://github.com/tanisha1407/STUDENT-SCORE-PREDICTION.git",
         demoUrl: "videos/Score_Prediction.mp4",
@@ -407,6 +652,7 @@ function renderProjectDetails(projectId) {
             <div class="project-section">
                 <h3><i class="fas fa-film"></i> Demo Videos</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                
                     ${project.demoVideos.map((vid, idx) => `
                         <div onclick="openDemo('${vid.file}')" style="cursor:pointer; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,212,0.3); border-radius: 15px; overflow: hidden; transition: 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 30px rgba(0,245,212,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                             <div style="position:relative; background: rgba(0,0,0,0.5); aspect-ratio: 16/9; display:flex; align-items:center; justify-content:center; overflow:hidden;">
@@ -425,7 +671,28 @@ function renderProjectDetails(projectId) {
             </div>
         `;
     }
+    let engineeringHtml = '';
+    if (project.engineering) {
+        engineeringHtml = `
+        <div class="project-section">
+            <h3><i class="fas fa-brain"></i> System Design & Engineering Decisions</h3>
+            <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 1.5rem;">
+                
+                ${project.engineering.decisions.map(item => `
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #00f5d4; margin-bottom: 0.5rem;">
+                            ${item.title}
+                        </h4>
+                        <ul style="padding-left: 1.2rem; color: rgba(255,255,255,0.8);">
+                            ${item.points.map(p => `<li>${p}</li>`).join('')}
+                        </ul>
+                    </div>
+                `).join('')}
 
+            </div>
+        </div>
+    `;
+    }
     // Add visualizations for Customer Purchase Analysis project
     if (project.id === 7 && project.visualizations) {
         visualizationsHtml = `
@@ -651,11 +918,12 @@ ${project.codeExample}
                 
                 <div class="project-section">
                     <h3><i class="fas fa-list-check"></i> Key Features</h3>
+                   
                     <ul class="features-list">
                         ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                 </div>
-                
+                ${engineeringHtml}
                 ${visualizationsHtml}
                 
                 ${videoGalleryHtml}
@@ -729,7 +997,13 @@ function openDemo(videoUrl) {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
-
+function goBack() {
+    if (document.referrer.includes("index.html")) {
+        window.history.back();
+    } else {
+        window.location.href = "index.html#projects";
+    }
+}
 function closeDemo() {
     const modal = document.getElementById('demoModal');
     const video = document.getElementById('demoVideo');
